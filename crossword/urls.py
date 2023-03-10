@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('create/', views.crossword_creation_form),
+    path('result/<str:data>', views.get_result_page),
 ]

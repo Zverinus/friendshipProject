@@ -8,14 +8,27 @@
 </head>
 <body>
     <div class="container">
+
+        <form action="/crossword/create/" method="post">
+            <div class="mx-5">
+          <label for="word1" class="form-label">Введите слово</label>
+          <input type="text" class="form-control" id="word1" name="word1" placeholder="Яблоко">
+            </div>
         <div class="mx-5">
-          <label for="Word" class="form-label">Введите слово</label>
-          <input type="text" class="form-control" id="Word" placeholder="Яблоко">
+          <label for="description1" class="form-label">Описание слова</label>
+          <textarea class="form-control" id="description1" name="description1" rows="3"></textarea>
         </div>
+                <div class="mx-5">
+          <label for="word2" class="form-label">Введите слово</label>
+          <input type="text" class="form-control" id="word2" name="word2" placeholder="Яблоко">
+            </div>
         <div class="mx-5">
-          <label for="exampleFormControlTextarea1" class="form-label">Описание слова</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label for="description2" class="form-label">Описание слова</label>
+          <textarea class="form-control" id="description2" name="description2" rows="3"></textarea>
         </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+
     </div>
 </body>
 </html>

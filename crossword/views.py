@@ -1,9 +1,9 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from wsgiref.util import FileWrapper
 import io
 import json
+import crossword_generator
 
 
 def index(request):
@@ -15,8 +15,8 @@ def crossword_creation_form(request):
     if request.method == 'POST':
         words = []
         descriptions = []
-        id = 1
 
+        id = 1
         word_id = 'word' + str(id)
         description_id = 'description' + str(id)
 
@@ -24,8 +24,9 @@ def crossword_creation_form(request):
             word = request.POST.get(word_id)
             description = request.POST.get(description_id)
 
-            words.append(word)
-            descriptions.append(description)
+            if word not in words:
+                words.append(word)
+                descriptions.append(description)
 
             id += 1
             word_id = 'word' + str(id)
@@ -42,8 +43,12 @@ def crossword_creation_form(request):
 def get_result_page(request, data):
     data = data[5:].replace("'", '"')
     data = json.loads(data)
+
+    generator_data = crossword_generator.generate_crossword(data)
+
     f = io.StringIO()
-    f.write(str(data))
+    for i in generator_data["matrix"]:
+        f.write("".join(i) + '\n')
 
     print(f.getvalue())
     response = HttpResponse(f.getvalue(), content_type='text/plain')

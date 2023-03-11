@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/final_shit.css' %}">
+</head>
+<body style="background-color: rgba(241,237,198,0.61)">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(228,214,162,0.68)">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CrossWorld</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/crossword">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Telegram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <table>
+    {% for row in matrix %}
+        <tr>
+            {% for symbol in row %}
+            {% if symbol != "_" %}
+                <td>{{symbol}}</td>
+            {% else %}
+                <td></td>
+            {% endif%}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    <div class="footer container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-4" align="left">2023 год от рождества Христова</div>
+            <div class="col-4" align="center">
+                Все права защищены <b>Любое копирование и воспроизведение текста, в том числе частичное
+                и в любых формах, без письменного разрешения правообладателя запрещено.</b>
+            </div>
+            <div class="col-4" align="right">Армений</div>
+        </div>
+    </div>
+</body>
+</html>

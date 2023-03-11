@@ -32,7 +32,10 @@ def crossword_creation_form(request):
             word_id = 'word' + str(id)
             description_id = 'description' + str(id)
 
+
         data = {'__words__': words, '__descriptions__': descriptions}
+
+        print(data)
         for i in range(len(words)):
             data[words[i]] = descriptions[i]
 
@@ -53,4 +56,4 @@ def get_result_page(request, data):
     print(f.getvalue())
     response = HttpResponse(f.getvalue(), content_type='text/plain')
     response['Content-Disposition'] = 'attachment; filename=file.txt'
-    return response
+    return render(request, "./crossword/result.html", {'matrix': generator_data["matrix"]})

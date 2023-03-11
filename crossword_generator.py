@@ -7,8 +7,12 @@ def generate_crossword(data):
     def create_list_let(word):
         return [letter for letter in word]
 
-
-    n = round(max([len(word) for word in words]) * 2.5)
+    if len(words) <= 5:
+        n = round(max([len(word) for word in words]) * 1.5)
+    elif len(words) <= 10:
+        n = round(max([len(word) for word in words]) * 2)
+    else:
+        n = round(max([len(word) for word in words]) * 2.5)
     word = words[-1]
     matrix = []
     for i in range(n):

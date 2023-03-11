@@ -1,34 +1,64 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Создание</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="Form.css">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <script src="{% static 'js/form.js' %}" defer></script>
 </head>
-<body>
-    <div class="container">
-
-        <form action="/crossword/create/" method="post">
-            <div class="mx-5">
-          <label for="word1" class="form-label">Введите слово</label>
-          <input type="text" class="form-control" id="word1" name="word1" placeholder="Яблоко">
-            </div>
-        <div class="mx-5">
-          <label for="description1" class="form-label">Описание слова</label>
-          <textarea class="form-control" id="description1" name="description1" rows="3"></textarea>
+<body style="background-color: rgba(241,237,198,0.61)">
+    <div class="row">
+        <div class="col-8">
+            <form id="FormaDlaJeni" action="/crossword/create/" method="post">
+                <button type="submit" class="btn btn-primary button4" id="IphoneCHikiCHiki">Сохранить форму</button>
+                <div class="container FormPadding">
+                    <div class="mx-5">
+                        <label for="word4" class="form-label">Введите слово</label>
+                        <input type="text" class="form-control" id="word4" name="word4" placeholder="Яблоко" minlength="2" maxlength="33">
+                    </div>
+                    <div class="mx-5">
+                      <label for="description1" class="form-label">Описание слова</label>
+                      <textarea class="form-control" id="description4" name="description4" rows="3" minlength="2" maxlength="200" placeholder="Введите описание слова"></textarea>
+                    </div>
+                </div>
+                <div class="container FormPadding">
+                    <div class="mx-5">
+                        <label for="word3" class="form-label">Введите слово</label>
+                        <input type="text" class="form-control" id="word3" name="word3" placeholder="Яблоко" minlength="2" maxlength="33" >
+                    </div>
+                    <div class="mx-5">
+                      <label for="description3" class="form-label">Описание слова</label>
+                      <textarea class="form-control" id="description3" name="description3" rows="3" minlength="2" maxlength="200" placeholder="Введите описание слова"></textarea>
+                    </div>
+                </div>
+                <div class="container FormPadding">
+                    <div class="mx-5">
+                        <label for="word2" class="form-label">Введите слово</label>
+                        <input type="text" class="form-control" id="word2" name="word2" placeholder="Яблоко" minlength="2" maxlength="33">
+                    </div>
+                    <div class="mx-5">
+                      <label for="description2" class="form-label">Описание слова</label>
+                      <textarea class="form-control" id="description2" name="description2" rows="3" minlength="2" maxlength="200" placeholder="Введите описание слова"></textarea>
+                    </div>
+                </div>
+                <div class="container FormPadding">
+                    <div class="mx-5">
+                        <label for="word1" class="form-label">Введите слово</label>
+                        <input type="text" class="form-control" id="word1" name="word1" placeholder="Яблоко" minlength="2" maxlength="33">
+                    </div>
+                    <div class="mx-5">
+                      <label for="description1" class="form-label">Описание слова</label>
+                      <textarea class="form-control" id="description1" name="description1" rows="3" minlength="2" maxlength="200" placeholder="Введите описание слова"></textarea>
+                    </div>
+                </div>
+            </form>
         </div>
-                <div class="mx-5">
-          <label for="word2" class="form-label">Введите слово</label>
-          <input type="text" class="form-control" id="word2" name="word2" placeholder="Яблоко">
-            </div>
-        <div class="mx-5">
-          <label for="description2" class="form-label">Описание слова</label>
-          <textarea class="form-control" id="description2" name="description2" rows="3"></textarea>
+        <div id="ZaebaliEtiFormi" class="col-4">
+            <button class="btn btn-success button2" id="DaVotJeBlyatKnopka">Добавить новое слово</button>
+            <button class="btn btn-danger button3" id="butooooon">Удалить последнее слово</button>
         </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
-
     </div>
 </body>
 </html>

@@ -2,11 +2,80 @@
     background-color: rgba(228,214,162,0.68);
     position: absolute;
     left: 0;
-    bottom: 0;
     width: 100%;
 }
 
-TD, TH {
-    padding: 12px; /* Поля вокруг текста */
+TD{
     border: 1px solid black; /* Рамка вокруг ячеек */
+    height: 30px;
+    width: 30px;
    }
+
+TABLE{
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+.btn.btn-success {
+  color: black;
+  background-color: rgb(227, 211, 155);
+  border-color: black;
+}
+.btn.btn-success.focus,
+.btn.btn-success:focus {
+  color: black;
+  background-color: rgb(227, 211, 155);
+  border-color: black;
+  outline: none;
+  box-shadow: none;
+}
+.btn.btn-success:hover {
+  color: black;
+  background-color: rgba(227, 211, 155, 0.62);
+  border-color: black;
+  outline: none;
+  box-shadow: none;
+}
+.btn.btn-success.active,
+.btn.btn-success:active {
+  color: black;
+  background-color: rgb(227, 211, 155);
+  border-color: black;
+  outline: none;
+}
+.btn.btn-success.active.focus,
+.btn.btn-success.active:focus,
+.btn.btn-success.active:hover,
+.btn.btn-success:active.focus,
+.btn.btn-success:active:focus,
+.btn.btn-success:active:hover {
+  color: black;
+  background-color: rgb(227, 211, 155);
+  border-color: black;
+  outline: none;
+  box-shadow: none;
+}
+
+.button1{
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 30%;
+    margin-top: 2%;
+    border-radius: 10%;
+}
+
+.button2{
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 15%;
+    margin-top: 2%;
+    border-radius: 10%;
+}
+
+

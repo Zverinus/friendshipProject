@@ -12,11 +12,14 @@
     <div class="row">
         <div class="col-8">
             <form id="FormaDlaJeni" action="/crossword/create/" method="post">
-                <button type="submit" class="btn btn-primary button4" id="IphoneCHikiCHiki">Сохранить форму</button>
+                <div class="row" id="IphoneCHikiCHikiBlyat">
+                    <button type="submit" class="btn btn-primary button4" id="IphoneCHikiCHiki">Создать кроссворд</button>
+                    <h5 class="Predupregdenie"> Возможно не все ваши слова будут использованы для создания кроссворда</h5>
+                </div>
                 <div class="container FormPadding">
                     <div class="mx-5">
                         <label for="word4" class="form-label">Введите слово</label>
-                        <input type="text" class="form-control" id="word4" name="word4" placeholder="Яблоко" minlength="2" maxlength="33">
+                        <input type="text" pattern="[A-zА-я]{2,33}" required="" class="form-control" id="word4" name="word4" placeholder="Яблоко" minlength="2" maxlength="33">
                     </div>
                     <div class="mx-5">
                       <label for="description1" class="form-label">Описание слова</label>
@@ -26,7 +29,7 @@
                 <div class="container FormPadding">
                     <div class="mx-5">
                         <label for="word3" class="form-label">Введите слово</label>
-                        <input type="text" class="form-control" id="word3" name="word3" placeholder="Яблоко" minlength="2" maxlength="33" >
+                        <input type="text" pattern="[A-zА-я]{2,33}" required="" class="form-control" id="word3" name="word3" placeholder="Яблоко" minlength="2" maxlength="33" >
                     </div>
                     <div class="mx-5">
                       <label for="description3" class="form-label">Описание слова</label>
@@ -36,7 +39,7 @@
                 <div class="container FormPadding">
                     <div class="mx-5">
                         <label for="word2" class="form-label">Введите слово</label>
-                        <input type="text" class="form-control" id="word2" name="word2" placeholder="Яблоко" minlength="2" maxlength="33">
+                        <input type="text" pattern="[A-zА-я]{2,33}" required="" class="form-control" id="word2" name="word2" placeholder="Яблоко" minlength="2" maxlength="33">
                     </div>
                     <div class="mx-5">
                       <label for="description2" class="form-label">Описание слова</label>
@@ -46,7 +49,7 @@
                 <div class="container FormPadding">
                     <div class="mx-5">
                         <label for="word1" class="form-label">Введите слово</label>
-                        <input type="text" class="form-control" id="word1" name="word1" placeholder="Яблоко" minlength="2" maxlength="33">
+                        <input type="text" pattern="[A-zА-я]{2,33}" required="" class="form-control" id="word1" name="word1" placeholder="Яблоко" minlength="2" maxlength="33">
                     </div>
                     <div class="mx-5">
                       <label for="description1" class="form-label">Описание слова</label>

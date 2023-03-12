@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Title</title>
+    <title>Crossword</title>
     <link rel="stylesheet" href="{% static 'css/final_shit.css' %}">
 </head>
 <body style="background-color: rgba(241,237,198,0.61)">
@@ -26,12 +26,16 @@
         </div>
       </div>
     </nav>
-    <table>
+    <div class="row" align="center">
+        <button type="submit" class="btn btn-success button1">Скачать заполненный кроссворд</button>
+        <button type="submit" class="btn btn-success button2">Скачать пустой кроссворд</button>
+    </div>
+    <table align="center">
     {% for row in matrix %}
         <tr>
             {% for symbol in row %}
             {% if symbol != "_" %}
-                <td>{{symbol}}</td>
+                <td align="center">{{symbol}}</td>
             {% else %}
                 <td></td>
             {% endif%}
@@ -46,7 +50,7 @@
                 Все права защищены <b>Любое копирование и воспроизведение текста, в том числе частичное
                 и в любых формах, без письменного разрешения правообладателя запрещено.</b>
             </div>
-            <div class="col-4" align="right">Армений</div>
+            <div class="col-4" align="right">Я Армений</div>
         </div>
     </div>
 </body>

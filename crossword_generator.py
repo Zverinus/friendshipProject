@@ -64,7 +64,7 @@ def generate_crossword(data):
                         for l in range(len(word)):  # Вписываем слово
                             if l == 0:
                                 counter += 1
-                                first_letters[word] = (j, i, counter)
+                                first_letters[word] = [j, i, counter]
                             matrix[i][j] = create_list_let(word)[l]
                             j += 1
                         for v in range(n):
@@ -140,7 +140,7 @@ def generate_crossword(data):
                         for l in range(len(word)):
                             if l == 0:
                                 counter += 1
-                                first_letters[word] = (j, i, counter)
+                                first_letters[word] = [j, i, counter]
                             # Вписываем слово
                             matrix[i][j] = create_list_let(word)[l]
                             i += 1

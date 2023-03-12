@@ -8,10 +8,16 @@
 }
 .button4 {
     font-size: 15px;
-    margin: 20px 15%;
+    margin-top: 20px;
+    margin-left: 16%;
 }
 
 
 .FormPadding {
     margin: 1% 10%;
+}
+
+.Predupregdenie{
+    margin-top: 25px;
+    margin-left: 5%;
 }

@@ -20,15 +20,14 @@
               <a class="nav-link active" aria-current="page" href="/crossword">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Telegram</a>
+              <a class="nav-link" href="https://t.me/+3F4bx9FEsyNhYjIy">Telegram</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <form method="post" action="/crossword/result/{{ data }}">
+    <form method="post"  action="/crossword/result/{{ data }}">
     <div class="row" align="center">
-
         <button type="submit" name="filled" class="btn btn-success button1">Скачать заполненный кроссворд</button>
         <button type="submit" name="empty" class="btn btn-success button2">Скачать пустой кроссворд</button>
     </div>
@@ -46,15 +45,5 @@
         </tr>
     {% endfor %}
     </table>
-    <div class="footer container-fluid">
-        <div class="row justify-content-md-center">
-            <div class="col-4" align="left">2023 год от рождества Христова</div>
-            <div class="col-4" align="center">
-                Все права защищены <b>Любое копирование и воспроизведение текста, в том числе частичное
-                и в любых формах, без письменного разрешения правообладателя запрещено.</b>
-            </div>
-            <div class="col-4" align="right">Я Армений</div>
-        </div>
-    </div>
 </body>
 </html>

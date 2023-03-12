@@ -1,7 +1,12 @@
 import json
+from tempfile import NamedTemporaryFile
+
 import openpyxl
 from openpyxl.styles import PatternFill, Border, Side, Font
+
+
 def get_filled_crossword(data):
+    name = 'f' + hash(data.__str__()).__str__()
     wb = openpyxl.Workbook()
     ws = wb.active
     sd = Side(border_style="double", color="00000000")
@@ -49,5 +54,4 @@ def get_filled_crossword(data):
         k += 3
         i += 1
     wb.save("filled.xlsx")
-    wb.close()
-    return wb
+    return "filled.xlsx"

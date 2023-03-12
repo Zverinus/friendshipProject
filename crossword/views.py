@@ -1,3 +1,5 @@
+import os
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -6,6 +8,11 @@ import json
 import crossword_generator
 import empty_crossword
 import filled_crossword
+import openpyxl
+from tempfile import NamedTemporaryFile
+from openpyxl.styles import PatternFill, Border, Side, Font
+
+from friendshipProject import settings
 
 
 def index(request):
@@ -47,7 +54,9 @@ def crossword_creation_form(request):
     return render(request, './crossword/crossword_creation_form.html')
 
 
+@csrf_exempt
 def get_result_page(request, data):
+    dc = data
     data = data[5:].replace("'", '"')
     data = json.loads(data)
 
@@ -55,12 +64,19 @@ def get_result_page(request, data):
     generator_data["descriptions"] = {}
     for word in generator_data["first_letters"].keys():
         generator_data["descriptions"][word] = data[word]
-    f = io.StringIO()
-    for i in generator_data["matrix"]:
-        f.write("".join(i) + '\n')
-    print(generator_data)
-    empty_crossword.get_empty_crossword(generator_data)
-    filled_crossword.get_filled_crossword(generator_data)
-    response = HttpResponse(f.getvalue(), content_type='text/plain')
-    response['Content-Disposition'] = 'attachment; filename=file.txt'
-    return render(request, "./crossword/result.html", {'matrix': generator_data["matrix"]})
+    if request.method == 'POST':
+        print(request.POST, 1)
+        if 'empty' in request.POST:
+            wb = empty_crossword.get_empty_crossword(generator_data)
+            with open(wb, 'rb') as fh:
+                response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+                response['Content-Disposition'] = 'attachment; filename=empty.xlsx'
+                return response
+        if 'filled' in request.POST:
+            wb = filled_crossword.get_filled_crossword(generator_data)
+            with open(wb, 'rb') as fh:
+                response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+                response['Content-Disposition'] = 'attachment; filename=filled.xlsx'
+                return response
+
+    return render(request, "./crossword/result.html", {'matrix': generator_data["matrix"], 'data': dc})

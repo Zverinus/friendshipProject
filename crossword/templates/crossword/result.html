@@ -26,10 +26,13 @@
         </div>
       </div>
     </nav>
+    <form method="post" action="/crossword/result/{{ data }}">
     <div class="row" align="center">
-        <button type="submit" class="btn btn-success button1">Скачать заполненный кроссворд</button>
-        <button type="submit" class="btn btn-success button2">Скачать пустой кроссворд</button>
+
+        <button type="submit" name="filled" class="btn btn-success button1">Скачать заполненный кроссворд</button>
+        <button type="submit" name="empty" class="btn btn-success button2">Скачать пустой кроссворд</button>
     </div>
+    </form>
     <table align="center">
     {% for row in matrix %}
         <tr>

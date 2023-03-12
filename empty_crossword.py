@@ -1,8 +1,11 @@
 import json
 import openpyxl
+from tempfile import NamedTemporaryFile
 from openpyxl.styles import PatternFill, Border, Side, Font
 
+
 def get_empty_crossword(data):
+    name = 'e' + hash(data.__str__()).__str__()
     wb = openpyxl.Workbook()
     ws = wb.active
     sd = Side(border_style="medium", color="00000000")
@@ -56,5 +59,4 @@ def get_empty_crossword(data):
         k += 3
         i += 2
     wb.save("empty.xlsx")
-    wb.close()
-    return wb
+    return "empty.xlsx"

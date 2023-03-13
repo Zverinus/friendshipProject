@@ -34,7 +34,7 @@ def crossword_creation_form(request):
             description = request.POST.get(description_id)
 
             if word not in words:
-                words.append(word)
+                words.append(word.lower())
                 descriptions.append(description)
 
             id += 1
